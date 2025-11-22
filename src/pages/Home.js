@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { featuredProducts } from '../data/products';
 import { useCart } from '../context/CartContext';
 
@@ -6,32 +6,31 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { addToCart } = useCart();
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const searchLower = searchTerm.toLowerCase();
-    const productMap = {
-      'iphone 16 pro max': 'iphone16p',
-      's24 plus': 's24p',
-      'z fold 6': 'zfold',
-      'iphone 15 pro': 'iphone15',
-      'iphone 16': 'iphone16',
-      'iphone 17 pro max': 'iphone17pm',
-      'iphone 17 air': 'iphone17air',
-      's25 ultra': 's25u',
-      'apple watch series 11': 'awatch11'
-    };
-
-    const productId = productMap[searchLower];
-    if (productId) {
-      const element = document.getElementById(productId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        alert('Item not found!');
-      }
-    } else {
-      alert('Item not found!');
+  // Filter products in real-time as user types
+  const filteredProducts = useMemo(() => {
+    if (!searchTerm.trim()) {
+      return featuredProducts;
     }
+
+    const searchLower = searchTerm.toLowerCase();
+    return featuredProducts.filter((product) => {
+      // Search in name
+      const nameMatch = product.name.toLowerCase().includes(searchLower);
+      
+      // Search in description
+      const descriptionMatch = product.description.toLowerCase().includes(searchLower);
+      
+      // Search in specs
+      const specsMatch = product.specs.some(spec => 
+        spec.toLowerCase().includes(searchLower)
+      );
+
+      return nameMatch || descriptionMatch || specsMatch;
+    });
+  }, [searchTerm]);
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
   };
 
   const handleAddToCart = (product) => {
@@ -85,21 +84,22 @@ const Home = () => {
         </ul>
       </div>
 
-      <form id="searchform" onSubmit={handleSearch}>
+      <form id="searchform" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           id="search-input"
-          placeholder="Search..."
+          placeholder="Search products..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleSearchChange}
         />
         <input type="submit" id="search-button" value="Search" />
       </form>
 
-      <h4>Featured Product</h4>
+      <h4>Featured Product{filteredProducts.length !== featuredProducts.length ? ` (${filteredProducts.length} found)` : ''}</h4>
 
       <div className="products-grid">
-        {featuredProducts.map((product) => (
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
           <div key={product.id} className="box" id={
             product.id === 1 ? 'iphone16p' : 
             product.id === 2 ? 's24p' : 
@@ -132,7 +132,12 @@ const Home = () => {
               </a>
             </button>
           </div>
-        ))}
+          ))
+        ) : (
+          <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '2rem' }}>
+            <p>No products found matching "{searchTerm}"</p>
+          </div>
+        )}
       </div>
     </div>
   );
