@@ -14,7 +14,7 @@ git commit -m "Initial commit"
 
 ### 3. Create GitHub Repository
 - Go to https://github.com/new
-- Name: `csci426-project1`
+- Name: `CSCI426-project`
 - Make it **Public**
 - Don't initialize with README
 - Create repository
@@ -22,7 +22,7 @@ git commit -m "Initial commit"
 ### 4. Push to GitHub
 ```bash
 git branch -M main
-git remote add origin https://github.com/HusseinIssa1/csci426-project1.git
+git remote add origin https://github.com/HusseinIssa1/CSCI426-project.git
 git push -u origin main
 ```
 
@@ -46,7 +46,7 @@ See `DEPLOYMENT.md` for complete step-by-step guide.
 
 Your site will be live at:
 ```
-https://HusseinIssa1.github.io/csci426-project1
+https://HusseinIssa1.github.io/CSCI426-project
 ```
 
 ## 🆘 Need Help?

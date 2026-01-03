@@ -15,7 +15,7 @@ Everything has been configured with your username **HusseinIssa1** and is ready 
 ### Step 1: Create GitHub Repository
 
 1. Go to: https://github.com/new
-2. Repository name: `csci426-project1`
+2. Repository name: `CSCI426-project`
 3. Description: "Phone Seller - React E-commerce Application"
 4. Make it **Public** (required for free GitHub Pages)
 5. **DO NOT** check any boxes (README, .gitignore, license)
@@ -26,13 +26,13 @@ Everything has been configured with your username **HusseinIssa1** and is ready 
 Run these commands in your terminal:
 
 ```bash
-git remote add origin https://github.com/HusseinIssa1/csci426-project1.git
+git remote add origin https://github.com/HusseinIssa1/CSCI426-project.git
 git push -u origin main
 ```
 
 ### Step 3: Enable GitHub Pages
 
-1. Go to your repository: https://github.com/HusseinIssa1/csci426-project1
+1. Go to your repository: https://github.com/HusseinIssa1/CSCI426-project
 2. Click **Settings** (top menu)
 3. Click **Pages** (left sidebar)
 4. Under **Source**, select **GitHub Actions**
@@ -78,7 +78,7 @@ GitHub Pages only hosts the frontend. You **must** deploy the backend separately
 
 ### Step 5: Set API URL Secret
 
-1. Go to: https://github.com/HusseinIssa1/csci426-project1/settings/secrets/actions
+1. Go to: https://github.com/HusseinIssa1/CSCI426-project/settings/secrets/actions
 2. Click **New repository secret**
 3. Name: `REACT_APP_API_URL`
 4. Value: `https://your-backend-url.onrender.com/api` (use your actual backend URL)
@@ -97,8 +97,8 @@ Update your backend environment variables with database credentials.
 ### Step 7: Wait for Deployment
 
 - GitHub Actions will automatically deploy your frontend
-- Check status: https://github.com/HusseinIssa1/csci426-project1/actions
-- Your site will be live at: **https://HusseinIssa1.github.io/csci426-project1**
+- Check status: https://github.com/HusseinIssa1/CSCI426-project/actions
+- Your site will be live at: **https://HusseinIssa1.github.io/CSCI426-project**
 
 ## 🆘 Need Help?
 
@@ -110,5 +110,5 @@ Update your backend environment variables with database credentials.
 ## ✨ That's It!
 
 Once everything is deployed, your site will be fully functional at:
-**https://HusseinIssa1.github.io/csci426-project1**
+**https://HusseinIssa1.github.io/CSCI426-project**
 

@@ -30,8 +30,8 @@ A full-stack e-commerce application for selling phones, built with React fronten
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/HusseinIssa1/csci426-project1.git
-cd csci426-project1
+git clone https://github.com/HusseinIssa1/CSCI426-project.git
+cd CSCI426-project
 ```
 
 2. Install dependencies:
@@ -91,7 +91,7 @@ This application is configured for deployment to GitHub Pages. The frontend will
 Before deploying, update the `homepage` field in `package.json` with your GitHub username:
 
 ```json
-"homepage": "https://HusseinIssa1.github.io/csci426-project1"
+"homepage": "https://HusseinIssa1.github.io/CSCI426-project"
 ```
 
 Your GitHub username is already configured: HusseinIssa1
@@ -120,7 +120,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/HusseinIssa1/csci426-project1.git
+git remote add origin https://github.com/HusseinIssa1/CSCI426-project.git
 git push -u origin main
 ```
 
@@ -130,7 +130,7 @@ The GitHub Actions workflow will automatically build and deploy your frontend to
 
 After deployment completes (usually takes 2-3 minutes), your site will be available at:
 ```
-https://HusseinIssa1.github.io/csci426-project1
+https://HusseinIssa1.github.io/CSCI426-project
 ```
 
 ## Backend Deployment (Required for Full Functionality)
@@ -163,7 +163,7 @@ Update your backend environment variables with the production database credentia
 ## Project Structure
 
 ```
-csci426-project1/
+CSCI426-project/
 ├── backend/
 │   ├── config/          # Database configuration
 │   ├── controllers/     # Route controllers

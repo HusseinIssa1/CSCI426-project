@@ -39,7 +39,7 @@ git commit -m "Initial commit - ready for deployment"
 ### 3. Create GitHub Repository
 
 1. Go to https://github.com/new
-2. Repository name: `csci426-project1` (or your preferred name)
+2. Repository name: `CSCI426-project` (or your preferred name)
 3. Description: "Phone Seller - React E-commerce Application"
 4. Choose **Public** (required for free GitHub Pages)
 5. **DO NOT** initialize with README, .gitignore, or license (you already have these)
@@ -49,7 +49,7 @@ git commit -m "Initial commit - ready for deployment"
 
 ```bash
 git branch -M main
-git remote add origin https://github.com/HusseinIssa1/csci426-project1.git
+git remote add origin https://github.com/HusseinIssa1/CSCI426-project.git
 git push -u origin main
 ```
 
@@ -142,7 +142,7 @@ The GitHub Actions workflow will automatically run when you push to `main`. To m
 
 1. Wait 2-3 minutes for deployment to complete
 2. Check the **Actions** tab for deployment status
-3. Once complete, visit: `https://HusseinIssa1.github.io/csci426-project1`
+3. Once complete, visit: `https://HusseinIssa1.github.io/CSCI426-project`
 
 ## Troubleshooting
 
