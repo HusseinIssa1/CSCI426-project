@@ -2,7 +2,7 @@
   "name": "phone-seller-react",
   "version": "1.0.0",
   "description": "Phone Seller - React Application",
-  "homepage": "https://HusseinIssa1.github.io/CSCI426-project",
+  "homepage": "https://husseinissa1.github.io/CSCI426-project",
   "private": false,
   "dependencies": {
     "bcryptjs": "^2.4.3",
